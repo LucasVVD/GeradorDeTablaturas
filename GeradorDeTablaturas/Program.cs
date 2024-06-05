@@ -1,4 +1,6 @@
-﻿namespace GeradorDeTablaturas
+﻿using GeradorDeTablaturas.Entities;
+
+namespace GeradorDeTablaturas
 {
     class Program
     {
@@ -6,17 +8,11 @@
         {
             // Apenas um protótipo por enquanto;
 
-            string[] standardTuning = Console.ReadLine().Split(' ');
-            for (int i = 0; i < standardTuning.Length; i++)
-            {
-                Console.Write($"\n{standardTuning[i]}|");
-                for (int j = 0; j < 100; j++)
-                {
-                    Console.Write("-");
-                }
-                Console.Write("|");
-            }
-            Console.WriteLine();
+            Console.Write("Digite sua afinação (separado de 'espaços'): ");
+            string[] tuning = Console.ReadLine().ToUpper().Split(' ');
+            int tablatureLength = int.Parse(Console.ReadLine());
+            Tablature tabs = new Tablature(tuning, tablatureLength);
+            tabs.GenerateTablature();
         }
     }
 }

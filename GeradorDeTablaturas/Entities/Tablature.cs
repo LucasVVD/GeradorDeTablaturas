@@ -53,7 +53,6 @@ namespace GeradorDeTablaturas.Entities
                         {
                             Console.WriteLine("O texto é muito longo para caber nesta coluna. Tente novamente.");
                         }
-
                         ShowUpdated(traces);
                     }
                 }
